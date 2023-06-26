@@ -1,0 +1,24 @@
+{{yield}}
+
+<div class="description">
+
+  <h1 class="description__header">
+    {{@title}}
+  </h1>
+  <p class="description__content">{{@content}}</p>
+
+  <div class="description__contact">
+    <img src="images/email.svg" alt="emailSVG" />
+
+    <input class="description__input-mail" type="text" />
+    <Button @text="Try it now" />
+  </div>
+
+  <Button
+    @text="More than 5000 happy customers"
+    @theme="dark"
+    @outer={{true}}
+    @btnImg="images/pie-chart.svg"
+    @btnImgAlt="Pie chart"
+  />
+</div>

@@ -1,0 +1,24 @@
+{{page-title "SelleoStyle3Ember"}}
+
+<div class="wrapper">
+  <Navigation @navLinks={{@model}} />
+  <main class="main">
+    <article class="main__article">
+      <section class="main__section">
+        <Description
+          @title="Mobile Banking and Invoicing"
+          @content="Control expenses, manage payments and cards on the go."
+        />
+      </section>
+      <section class="main__section">
+        <img
+          class="main__img"
+          src="images/phone-in-hand.jpg"
+          alt="Phone in hand img"
+        />
+      </section>
+    </article>
+  </main>
+</div>
+
+{{outlet}}

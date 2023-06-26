@@ -1,0 +1,20 @@
+{{yield}}
+<button class={{this.checkThemeClass @theme}} type="button">
+
+  {{#if @btnImg}}
+    <img
+      class={{this.checkImageClass @outer}}
+      src={{@btnImg}}
+      alt={{@btnImgAlt}}
+    />
+  {{/if}}
+
+  <p>
+    {{#if @smallText}}
+      <span class="button-text--small">{{@smallText}}</span>
+    {{/if}}
+    <span class="button-text">{{@text}}</span>
+  </p>
+</button>
+<div>
+</div>

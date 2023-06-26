@@ -1,0 +1,25 @@
+{{yield}}
+<header class="header">
+  <div class="header__logo">
+    <strong>
+      finced
+    </strong>
+  </div>
+
+  <nav class="header__navigation">
+    {{#each @navLinks as |navLink|}}
+      <li class="header__list-item">
+        <a class="header__link" href="#">{{navLink}}</a>
+      </li>
+    {{/each}}
+  </nav>
+
+  <Button
+    @smallText="Download on here"
+    @text="AppStore"
+    @theme="dark"
+    @btnImg="images/apple.svg"
+    @btnImgAlt="apple"
+  />
+
+</header>
