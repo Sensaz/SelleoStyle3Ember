@@ -1,0 +1,63 @@
+@use './global/variable'
+@use './global/mixins'
+
+%outerElementShadow
+    content: ""
+    position: absolute
+    width: 50px
+    height: 10px
+    z-index: -1
+    border-radius: 50%
+    bottom: 2px
+    box-shadow: -3px 3px 20px black
+
+.button
+    @include mixins.setFlexBox(  $align: center, $gap: variable.$gapM)
+    position: relative
+    max-width: 150px
+    max-height: 100%
+    padding: 12px
+    border: none
+    outline: none
+    border-radius: 8px
+    background-color: variable.$secondary
+    cursor: pointer
+    transition: .1s linear background-color
+    &:hover, &:hover &__img--outer
+        background-color: variable.$secondaryHover
+    &--outer
+        margin-left: 10px
+        &::before
+            @extend %outerElementShadow
+            left: 1px
+        &::after
+            @extend %outerElementShadow
+            right: 1px
+    &--dark
+        background-color: variable.$primary
+        &:hover
+            background-color: variable.$primaryHover
+    &__img
+        display: inline-block
+        width: 20px
+        height: 20px
+        &--outer
+            position: relative
+            bottom: 15px
+            right: 7px
+            width: 30px
+            padding: 2px
+            border-radius: 50%
+            background-color: variable.$secondary
+            transform: scale(1.8)
+            transition: .1s linear background-color
+    &__content
+        text-align: left
+    &__text
+        display: block
+        text-align: left
+        font-weight: 500
+        font-size: .9em
+        color: variable.$textColorBtn
+        &--small
+            font-size: .6em
