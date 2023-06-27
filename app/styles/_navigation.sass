@@ -1,0 +1,21 @@
+@use './global/variable'
+@use './global/mixins'
+
+.header
+    @include mixins.setFlexBox( $justify: space-between, $align: center )
+    width: 90%
+    margin: 0 auto
+    &__logo
+        font-size: 1.3em
+    &__list
+        @include mixins.setFlexBox($gap: variable.$gapM)
+        list-style-type: none
+    &__list-item
+    &__link
+        font-weight: 600
+        font-size: .9em
+        text-decoration: none
+        color: variable.$textColorLight
+        transition: .1s linear color
+        &:hover
+            color: variable.$textColor
