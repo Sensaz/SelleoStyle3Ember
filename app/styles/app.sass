@@ -1,0 +1,59 @@
+@use './global/variable' 
+@use './global/mixins'
+@import 'button'
+@import 'description'
+@import 'navigation'
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: content-box
+
+body
+  min-height: 100vh
+  font-family: sans-serif
+  color: variable.$textColor
+  background-color: variable.$bodyBg
+  overflow: hidden
+
+.wrapper
+  @include mixins.setFlexBox($direction: column, $gap: variable.$gapXL)
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 90vw
+  max-width: 1080px
+  padding: 26px 0 calc(26px * 1.5) 0
+  transform: translate(-50%, -50%)
+  background-color: variable.$mainBg
+
+.main
+  @include mixins.setFlexBox($justify: center)
+  width: 80%
+  margin: 0 auto
+  &__article
+    @include mixins.setFlexBox($align: flex-end, $justify: space-between )
+    width: 100%
+    max-width: 850px
+    @include mixins.tabletDevice
+      flex-direction: column
+      max-width: 100%
+  &__section
+    width: 45%
+    position: relative
+    @include mixins.laptopDevice
+      width: 50%
+    @include mixins.tabletDevice
+      width: 90%
+  &__img
+    position: absolute
+    bottom: -15vh
+    right: 0
+    width: 600px
+    z-index: -1
+    filter: grayscale(1)
+    opacity: .8
+    @include mixins.laptopDevice
+      right: -15vw
+    @include mixins.tabletDevice
+      display: none
