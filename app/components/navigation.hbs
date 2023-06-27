@@ -1,4 +1,3 @@
-{{yield}}
 <header class="header">
   <div class="header__logo">
     <strong>
@@ -7,11 +6,13 @@
   </div>
 
   <nav class="header__navigation">
-    {{#each @navLinks as |navLink|}}
-      <li class="header__list-item">
-        <a class="header__link" href="#">{{navLink}}</a>
-      </li>
-    {{/each}}
+    <ul class="header__list">
+      {{#each @navLinks as |navLink|}}
+        <li class="header__list-item">
+          <a class="header__link" href="#">{{navLink}}</a>
+        </li>
+      {{/each}}
+    </ul>
   </nav>
 
   <Button
