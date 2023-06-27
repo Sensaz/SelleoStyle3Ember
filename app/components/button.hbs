@@ -1,5 +1,4 @@
-{{yield}}
-<button class={{this.checkThemeClass @theme}} type="button">
+<button class={{this.checkButtonClass @theme @outer}} type="button">
 
   {{#if @btnImg}}
     <img
@@ -9,12 +8,10 @@
     />
   {{/if}}
 
-  <p>
+  <p class="button__content">
     {{#if @smallText}}
-      <span class="button-text--small">{{@smallText}}</span>
+      <span class="button__text button__text--small">{{@smallText}}</span>
     {{/if}}
-    <span class="button-text">{{@text}}</span>
+    <span class="button__text">{{@text}}</span>
   </p>
 </button>
-<div>
-</div>
