@@ -1,22 +1,32 @@
-{{yield}}
-
 <div class="description">
+  <div class="description__inner">
+    <div>
+      <h1 class="description__header">
+        {{@title}}
+      </h1>
+      <p class="description__content">{{@content}}</p>
+    </div>
 
-  <h1 class="description__header">
-    {{@title}}
-  </h1>
-  <p class="description__content">{{@content}}</p>
+    <div class="description__contact">
+      <div class="description__input-wrapper">
+        <img
+          class="description__icon-mail"
+          src="images/email.svg"
+          alt="emailSVG"
+        />
 
-  <div class="description__contact">
-    <img src="images/email.svg" alt="emailSVG" />
-
-    <input class="description__input-mail" type="text" />
-    <Button @text="Try it now" />
+        <input
+          class="description__input-mail"
+          type="text"
+          placeholder="mehmet@gmail.com"
+        />
+      </div>
+      <Button @text="Try it now" />
+    </div>
   </div>
 
   <Button
     @text="More than 5000 happy customers"
-    @theme="dark"
     @outer={{true}}
     @btnImg="images/pie-chart.svg"
     @btnImgAlt="Pie chart"
