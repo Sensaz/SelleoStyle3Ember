@@ -1,0 +1,32 @@
+@use './global/variable'
+@use './global/mixins'
+
+.description
+    @include mixins.setFlexBox($direction: column, $gap: variable.$gapXL)
+    max-width: 300px
+    &__inner
+        @include mixins.setFlexBox($direction: column, $gap: variable.$gapL)
+    &__header
+        font-size: 2.5em
+    &__content
+        width: 85%
+        margin-top: 15px
+        font-size: .86em
+        color: #4f4f4f
+    &__contact
+        @include mixins.setFlexBox( $justify: flex-end, $align: center, $gap: variable.$gapM)
+        width: 85%
+        padding: 5px 5px 5px 10px
+        border-radius: 8px
+        background-color: variable.$thirty
+        transition: .1s linear box-shadow
+        &:has(.description__input-mail:focus)
+            box-shadow: 0 0 5px black
+    &__input-wrapper
+        @include mixins.setFlexBox( $justify: flex-end, $align: center, $gap: variable.$gapS)
+    &__icon-mail
+        height: .5em
+    &__input-mail
+        background-color: none
+        border: none
+        outline: none
